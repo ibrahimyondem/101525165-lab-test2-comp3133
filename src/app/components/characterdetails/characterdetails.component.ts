@@ -37,4 +37,23 @@ export class CharacterdetailsComponent implements OnInit {
   goBack(): void {
     this.router.navigate(['/characters']);
   }
+
+  getHouseClass(house: string): string {
+    if (!house) {
+      return 'house-empty';
+    }
+
+    switch (house.toLowerCase()) {
+      case 'gryffindor':
+        return 'house-gryffindor';
+      case 'slytherin':
+        return 'house-slytherin';
+      case 'hufflepuff':
+        return 'house-hufflepuff';
+      case 'ravenclaw':
+        return 'house-ravenclaw';
+      default:
+        return 'house-empty';
+    }
+  }
 }

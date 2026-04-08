@@ -1,64 +1,106 @@
 :host {
   display: block;
+  min-height: 100vh;
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 20px;
 }
 
 .details-page {
-  min-height: 100vh;
-  background: #1a1a1a;
-  padding: 1rem;
+  color: #ffffff;
 }
 
 .details-card {
-  margin-top: 1rem;
-  background: transparent;
-  box-shadow: none;
+  background: #2a2a2a;
+  padding: 24px;
+  border-radius: 8px;
 }
 
 .details-layout {
   display: flex;
-  gap: 1.5rem;
+  gap: 40px;
+  align-items: flex-start;
 }
 
-.left-column,
-.right-column {
-  flex: 1;
+.left-column {
+  width: 350px;
+  flex-shrink: 0;
 }
 
 .character-image,
 .image-placeholder {
   width: 100%;
-  max-height: 400px;
+  height: 400px;
+  border-radius: 8px;
 }
 
 .character-image {
   object-fit: cover;
+  object-position: top;
 }
 
 .image-placeholder {
-  height: 400px;
-  background: #666666;
+  background: #444;
+}
+
+.right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 10px;
+}
+
+.details-page button {
+  margin-bottom: 20px;
 }
 
 .label {
   color: #ffffff;
-}
-
-.value,
-.name-value {
-  color: #ff5722;
+  font-weight: bold;
 }
 
 .name-value {
+  color: #e84118;
   font-size: 2rem;
-  margin: 0 0 1rem;
+  margin-bottom: 16px;
+}
+
+.value {
+  color: #e84118;
+  margin-left: 4px;
+}
+
+.value.house-gryffindor {
+  color: #d32f2f;
+}
+
+.value.house-slytherin {
+  color: #388e3c;
+}
+
+.value.house-hufflepuff {
+  color: #fbc02d;
+}
+
+.value.house-ravenclaw {
+  color: #1976d2;
+}
+
+.value.house-empty {
+  color: #9e9e9e;
 }
 
 .right-column p {
-  margin: 0.5rem 0;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
   .details-layout {
     flex-direction: column;
+  }
+
+  .left-column {
+    width: 100%;
   }
 }

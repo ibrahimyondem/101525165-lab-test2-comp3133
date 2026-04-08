@@ -19,7 +19,12 @@
         <div class="right-column">
           <h2 class="name-value">{{ selectedCharacter.name }}</h2>
 
-          <p><span class="label">House:</span> <span class="value">{{ selectedCharacter.house }}</span></p>
+          <p>
+            <span class="label">House:</span>
+            <span class="value" [ngClass]="getHouseClass(selectedCharacter.house)">
+              {{ selectedCharacter.house }}
+            </span>
+          </p>
           <p><span class="label">Actor:</span> <span class="value">{{ selectedCharacter.actor }}</span></p>
           <p><span class="label">Wizard:</span> <span class="value">{{ selectedCharacter.wizard }}</span></p>
           <p><span class="label">Species:</span> <span class="value">{{ selectedCharacter.species }}</span></p>
