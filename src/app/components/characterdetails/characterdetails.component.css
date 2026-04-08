@@ -61,9 +61,28 @@
 }
 
 .name-value {
-  color: #e84118;
   font-size: 2rem;
   margin-bottom: 16px;
+}
+
+.name-value.house-gryffindor {
+  color: #d32f2f;
+}
+
+.name-value.house-slytherin {
+  color: #388e3c;
+}
+
+.name-value.house-hufflepuff {
+  color: #fbc02d;
+}
+
+.name-value.house-ravenclaw {
+  color: #1976d2;
+}
+
+.name-value.house-empty {
+  color: #9e9e9e;
 }
 
 .value {

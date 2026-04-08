@@ -17,7 +17,9 @@
         </div>
 
         <div class="right-column">
-          <h2 class="name-value">{{ selectedCharacter.name }}</h2>
+          <h2 class="name-value" [ngClass]="getHouseClass(selectedCharacter.house)">
+            {{ selectedCharacter.name }}
+          </h2>
 
           <p>
             <span class="label">House:</span>
@@ -25,13 +27,34 @@
               {{ selectedCharacter.house }}
             </span>
           </p>
-          <p><span class="label">Actor:</span> <span class="value">{{ selectedCharacter.actor }}</span></p>
-          <p><span class="label">Wizard:</span> <span class="value">{{ selectedCharacter.wizard }}</span></p>
-          <p><span class="label">Species:</span> <span class="value">{{ selectedCharacter.species }}</span></p>
-          <p><span class="label">Ancestry:</span> <span class="value">{{ selectedCharacter.ancestry }}</span></p>
-          <p><span class="label">Wand Wood:</span> <span class="value">{{ selectedCharacter.wand.wood }}</span></p>
-          <p><span class="label">Wand Core:</span> <span class="value">{{ selectedCharacter.wand.core }}</span></p>
-          <p><span class="label">Wand Length:</span> <span class="value">{{ selectedCharacter.wand.length }}</span></p>
+          <p>
+            <span class="label">Actor:</span>
+            <span class="value" [ngClass]="getHouseClass(selectedCharacter.house)">{{ selectedCharacter.actor }}</span>
+          </p>
+          <p>
+            <span class="label">Wizard:</span>
+            <span class="value" [ngClass]="getHouseClass(selectedCharacter.house)">{{ selectedCharacter.wizard }}</span>
+          </p>
+          <p>
+            <span class="label">Species:</span>
+            <span class="value" [ngClass]="getHouseClass(selectedCharacter.house)">{{ selectedCharacter.species }}</span>
+          </p>
+          <p>
+            <span class="label">Ancestry:</span>
+            <span class="value" [ngClass]="getHouseClass(selectedCharacter.house)">{{ selectedCharacter.ancestry }}</span>
+          </p>
+          <p>
+            <span class="label">Wand Wood:</span>
+            <span class="value" [ngClass]="getHouseClass(selectedCharacter.house)">{{ selectedCharacter.wand.wood }}</span>
+          </p>
+          <p>
+            <span class="label">Wand Core:</span>
+            <span class="value" [ngClass]="getHouseClass(selectedCharacter.house)">{{ selectedCharacter.wand.core }}</span>
+          </p>
+          <p>
+            <span class="label">Wand Length:</span>
+            <span class="value" [ngClass]="getHouseClass(selectedCharacter.house)">{{ selectedCharacter.wand.length }}</span>
+          </p>
         </div>
       </div>
     </mat-card>
