@@ -1,0 +1,64 @@
+:host {
+  display: block;
+}
+
+.details-page {
+  min-height: 100vh;
+  background: #1a1a1a;
+  padding: 1rem;
+}
+
+.details-card {
+  margin-top: 1rem;
+  background: transparent;
+  box-shadow: none;
+}
+
+.details-layout {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.left-column,
+.right-column {
+  flex: 1;
+}
+
+.character-image,
+.image-placeholder {
+  width: 100%;
+  max-height: 400px;
+}
+
+.character-image {
+  object-fit: cover;
+}
+
+.image-placeholder {
+  height: 400px;
+  background: #666666;
+}
+
+.label {
+  color: #ffffff;
+}
+
+.value,
+.name-value {
+  color: #ff5722;
+}
+
+.name-value {
+  font-size: 2rem;
+  margin: 0 0 1rem;
+}
+
+.right-column p {
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .details-layout {
+    flex-direction: column;
+  }
+}

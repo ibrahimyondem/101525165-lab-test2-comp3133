@@ -1,0 +1,67 @@
+:host {
+  display: block;
+}
+
+.filter-container {
+  padding: 1rem;
+}
+
+mat-form-field {
+  width: 280px;
+}
+
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 0 1rem 1rem;
+}
+
+.character-card {
+  background: #1c1c1c;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.character-image,
+.image-placeholder {
+  width: 100%;
+  height: 250px;
+}
+
+.character-image {
+  object-fit: cover;
+}
+
+.image-placeholder {
+  background: #666666;
+}
+
+.character-name,
+.character-actor,
+.character-house {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.house-gryffindor {
+  color: #d32f2f;
+}
+
+.house-slytherin {
+  color: #388e3c;
+}
+
+.house-hufflepuff {
+  color: #fbc02d;
+}
+
+.house-ravenclaw {
+  color: #1976d2;
+}
+
+@media (max-width: 768px) {
+  .characters-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
