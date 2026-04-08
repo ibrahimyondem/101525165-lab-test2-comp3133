@@ -4,29 +4,33 @@
   <mat-form-field appearance="outline">
     <mat-label>Select House</mat-label>
     <mat-select (selectionChange)="onHouseChange($event.value)">
-      <mat-option *ngFor="let house of houses" [value]="house">{{ house }}</mat-option>
+      @for (house of houses; track house) {
+        <mat-option [value]="house">{{ house }}</mat-option>
+      }
     </mat-select>
   </mat-form-field>
 </div>
 
 <div class="characters-grid">
-  <mat-card class="character-card" *ngFor="let character of characters">
-    <img
-      *ngIf="character.image; else placeholder"
-      [src]="character.image"
-      [alt]="character.name"
-      class="character-image"
-    />
-    <ng-template #placeholder>
-      <div class="image-placeholder"></div>
-    </ng-template>
+  @for (character of characters; track character.id) {
+    <mat-card class="character-card">
+      @if (character.image) {
+        <img
+          [src]="character.image"
+          [alt]="character.name"
+          class="character-image"
+        />
+      } @else {
+        <div class="image-placeholder"></div>
+      }
 
-    <mat-card-content>
-      <h3 class="character-name">{{ character.name }}</h3>
-      <p class="character-actor">{{ character.actor }}</p>
-      <p class="character-house" [ngClass]="getHouseClass(character.house)">
-        {{ character.house }}
-      </p>
-    </mat-card-content>
-  </mat-card>
+      <mat-card-content>
+        <h3 class="character-name">{{ character.name }}</h3>
+        <p class="character-actor">{{ character.actor }}</p>
+        <p class="character-house" [ngClass]="getHouseClass(character.house)">
+          {{ character.house }}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  }
 </div>

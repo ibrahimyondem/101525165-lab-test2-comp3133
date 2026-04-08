@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -19,7 +19,8 @@ export class CharacterdetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private harryPotterService: HarryPotterService
+    private harryPotterService: HarryPotterService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -28,6 +29,7 @@ export class CharacterdetailsComponent implements OnInit {
     if (id) {
       this.harryPotterService.getCharacterById(id).subscribe((data) => {
         this.selectedCharacter = data[0] ?? null;
+        this.cdr.detectChanges();
       });
     }
   }

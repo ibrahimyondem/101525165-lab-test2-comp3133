@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
@@ -24,11 +24,15 @@ export class CharacterfilterComponent {
   characters: Character[] = [];
   readonly houses: string[] = ['Gryffindor', 'Slytherin', 'Hufflepuff', 'Ravenclaw'];
 
-  constructor(private harryPotterService: HarryPotterService) {}
+  constructor(
+    private harryPotterService: HarryPotterService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   onHouseChange(house: string): void {
     this.harryPotterService.getCharactersByHouse(house).subscribe((data) => {
       this.characters = data;
+      this.cdr.detectChanges();
     });
   }
 
