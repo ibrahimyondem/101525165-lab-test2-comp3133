@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
@@ -26,7 +27,8 @@ export class CharacterfilterComponent {
 
   constructor(
     private harryPotterService: HarryPotterService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private router: Router
   ) {}
 
   onHouseChange(house: string): void {
@@ -49,5 +51,9 @@ export class CharacterfilterComponent {
       default:
         return '';
     }
+  }
+
+  navigateToCharacter(id: string): void {
+    this.router.navigate(['/character', id]);
   }
 }

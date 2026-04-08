@@ -13,7 +13,7 @@
 
 <div class="characters-grid">
   @for (character of characters; track character.id) {
-    <mat-card class="character-card">
+    <mat-card class="character-card" (click)="navigateToCharacter(character.id)">
       @if (character.image) {
         <img
           [src]="character.image"
